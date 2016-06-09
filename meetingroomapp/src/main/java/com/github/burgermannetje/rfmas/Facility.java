@@ -2,22 +2,23 @@ package com.github.burgermannetje.rfmas;
 
 public class Facility {
 
-	private String name;
+	private static String facilityName;
 
-	public Facility(final String name) {
-		if (name==null) {
+	public Facility(final String facilityName) {
+		if (facilityName==null) {
 			throw new IllegalArgumentException("Argument 'name' should not be null");
-		
+			
 		}
-		String nameCln = name.trim();
-		if ("".equals(nameCln))
 		
-		this.name = nameCln;
-	}
-
-	public String getName() {
+		String nameCln = facilityName.trim();
+		if ("".equals(nameCln)) {
+		throw new IllegalArgumentException("Argument contains non-empty blanks");
+		}
+		Facility.facilityName = nameCln;
+		}
+	public static String getName() {
 		// TODO Auto-generated method stub
-		return name;
+		return facilityName;
 	}
 
 }

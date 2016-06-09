@@ -14,7 +14,7 @@ public class FacilityTest {
 	
 	@Test
 	public void createBeamer() throws Exception {
-		Facility facility = new Facility("Beamer");		
+		Facility facility = new Facility("  \t \nBeamer");		
 		assertEquals ("Beamer", facility.getName());
 	}
 
@@ -23,4 +23,5 @@ public class FacilityTest {
 		new Facility(null);		
 	}
 
+	
 }
