@@ -17,17 +17,10 @@ public class Room {
 		return roomName;
 	}
 
-//puzzle
 	public String getFacilityName() {
 		return Facility.getName();
 	}
 	public void setFacilityName(Facility facilityName) {
 	}
-//	public  String getFacility() {
-//		return ((Facility) Facility).getName();
-//		// TODO Auto-generated method stub
-//		//return facility;
-//	}
-
 	
 }
