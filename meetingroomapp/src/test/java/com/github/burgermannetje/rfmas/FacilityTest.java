@@ -8,20 +8,17 @@ public class FacilityTest {
 
 	@Test
 	public void createComputer() throws Exception {
-		Facility facility = new Facility("Computer");		
-		assertEquals ("Computer", facility.getName());
+		assertEquals ("Computer", new Facility("Computer").getName());
 	}
 	
 	@Test
 	public void createBeamer() throws Exception {
-		Facility facility = new Facility("  \t \nBeamer");		
-		assertEquals ("Beamer", facility.getName());
+		assertEquals ("Beamer", new Facility(" Beamer").getName());
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void createNoArgs() throws Exception {
 		new Facility(null);		
 	}
-
 	
 }

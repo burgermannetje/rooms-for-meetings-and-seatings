@@ -1,24 +1,30 @@
 package com.github.burgermannetje.rfmas;
 
-public class Facility {
+public class Facility implements Comparable<Facility>{
 
-	private static String facilityName;
+	private String name;
 
 	public Facility(final String facilityName) {
 		if (facilityName==null) {
 			throw new IllegalArgumentException("Argument 'name' should not be null");
-			
 		}
 		
 		String nameCln = facilityName.trim();
 		if ("".equals(nameCln)) {
-		throw new IllegalArgumentException("Argument contains non-empty blanks");
+			throw new IllegalArgumentException("Argument contains non-empty blanks");
 		}
-		Facility.facilityName = nameCln;
-		}
-	public static String getName() {
+
+		this.name = nameCln;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public int compareTo(Facility other) {
 		// TODO Auto-generated method stub
-		return facilityName;
+		return this.getName().compareTo(other.getName());
 	}
 
 }
