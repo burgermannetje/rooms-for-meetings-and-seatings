@@ -7,7 +7,8 @@
 	<artifactId>rooms-for-meetings-and-seatings</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>meeting-and-seatings</name>
+	<name>Rooms for Meetings and Seatings</name>
+
 	<properties>
 		<jersey.version>2.22.2</jersey.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,7 +16,7 @@
 	</properties>
 
 	<build>
-		<finalName>meetingroomapp</finalName>
+		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
