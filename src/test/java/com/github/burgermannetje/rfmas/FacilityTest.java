@@ -2,23 +2,29 @@ package com.github.burgermannetje.rfmas;
 
 import static org.junit.Assert.*;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class FacilityTest {
-
+	@Rule
+	public ExpectedException exception = ExpectedException.none();
+	
 	@Test
-	public void createComputer() throws Exception {
-		assertEquals ("Computer", new Facility("Computer").getName());
+	public void createValidStringComputer() throws Exception {
+		assertEquals ("Computer 1", new Facility("Computer 1").getName());
 	}
 	
 	@Test
-	public void createBeamer() throws Exception {
-		assertEquals ("Beamer", new Facility(" Beamer").getName());
+	public void createDaylightRemoval() throws Exception {
+		assertEquals ("Daglichtblokkering", new Facility(" Daglichtblokkering \n").getName());
 	}
 
-	@Test(expected = IllegalArgumentException.class)
-	public void createNoArgs() throws Exception {
-		new Facility(null);		
+	@Test
+	public void createNullArgumentNameFacility() throws Exception {
+		exception.expect(IllegalArgumentException.class);
+		exception.expectMessage("Facility: 'name' should not be null");
+	new Facility(null);		
 	}
 	
 }
