@@ -1,10 +1,12 @@
-package com.github.burgermannetje.rfmas;
+package com.github.burgermannetje.rfmas.domain;
 
 import static org.junit.Assert.*;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
+import com.github.burgermannetje.rfmas.Facility;
 
 public class FacilityTest {
 	@Rule
