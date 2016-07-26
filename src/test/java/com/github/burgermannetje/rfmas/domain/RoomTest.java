@@ -29,19 +29,20 @@ public class RoomTest {
 		exception.expectMessage("Deze melding moet komen");
 		Room room = new Room(new Location("De grote toren"), null, 6,  new Facility("Beamer"));		
 	}
+	
 	@Test
 	public void createNullArgLocation() throws Exception {
 		exception.expect(IllegalArgumentException.class);
-		exception.expectMessage("Deze melding moet komen");
+		exception.expectMessage("Room: argument 'location' cannot be empty");
 		new Room(null, null, 1, null);		
 	}
 
-	@Test
-	public void createNullArgFacility() throws Exception {
-		exception.expect(NullPointerException.class);
-		new Room(new Location("De grote toren"), "roomName", 20 ,null);
-		
-	}
+//	@Test
+//	public void createNullArgFacility() throws Exception {
+//		exception.expect(NullPointerException.class);
+//		new Room(new Location("De grote toren"), "roomName", 20 ,null);
+//	}
+
 //	@Test
 //	public void createNullArgSeats() throws Exception {
 //		exception.expect(NullPointerException.class);
