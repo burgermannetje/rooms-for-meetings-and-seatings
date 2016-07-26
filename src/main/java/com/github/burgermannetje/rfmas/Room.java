@@ -1,26 +1,28 @@
 package com.github.burgermannetje.rfmas;
 
+import java.util.Set;
+
 public class Room {
 
 	private String roomName;
 	private Location location;
-	private Facility facility;
+	private Set<Facility> facilities;
 	private int availableSeats;
 
-	public Room(Location location, int availableSeats) 
-	{
+	public Room(Location location, int availableSeats) {
 		new Room(location, null, availableSeats, null);
 	}
 
-	public Room(Location location, final String roomName, int availableSeats) 
-	{
+	public Room(Location location, final String roomName, int availableSeats) {
 		new Room(location, roomName, availableSeats, null);
 	}
-		
-	public Room(Location location, final String roomName, int availableSeats, Facility facility) {
-//		if (facility == null) {
-//			throw new IllegalArgumentException("Room: argument 'facility' cannot be empty");
-//		}
+
+	public Room(Location location, final String roomName, int availableSeats, Set<Facility> facilities) {
+		// if (facility == null) {
+		// throw new IllegalArgumentException("Room: argument 'facility' cannot
+		// be empty");
+		// }
+
 		if (location == null) {
 			throw new IllegalArgumentException("Room: argument 'location' cannot be empty");
 		}
@@ -37,7 +39,7 @@ public class Room {
 
 		this.roomName = roomCln;
 		this.location = location;
-		this.facility = facility;
+		this.facilities = facilities;
 		this.availableSeats = availableSeats;
 	}
 
@@ -45,8 +47,21 @@ public class Room {
 		return roomName;
 	}
 
+	// add set facilities
 	public String getFacilityName() {
-		return facility.getName();
+		StringBuilder bldr = new StringBuilder();
+		int i = 1;
+		for (Facility facility : facilities) {
+			bldr.append(facility.getName());
+			if (i != facilities.size())
+				;
+			{
+				bldr.append(", ");
+			}
+			i++;
+		}
+
+		return bldr.toString();
 	}
 
 	// public void setFacilityName(Facility facilityName) {

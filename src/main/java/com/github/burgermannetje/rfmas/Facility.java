@@ -11,7 +11,7 @@ public class Facility implements Comparable<Facility>{
 			throw new IllegalArgumentException("Facility: 'name' should not be null");
 		}
 		
-		String nameCln = StringUtils.trim(facilityName);
+		String nameCln = StringUtils.trimToNull(facilityName);
 		if ("".equals(nameCln)) {
 			throw new IllegalArgumentException("Facility: 'name' contains non-empty blanks");
 		}

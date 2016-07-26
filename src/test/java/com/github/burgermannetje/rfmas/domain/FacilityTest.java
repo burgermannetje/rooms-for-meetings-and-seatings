@@ -17,10 +17,6 @@ public class FacilityTest {
 		assertEquals ("Computer 1", new Facility("Computer 1").getName());
 	}
 	
-	@Test
-	public void createDaylightRemoval() throws Exception {
-		assertEquals ("Daglichtblokkering", new Facility(" Daglichtblokkering \n").getName());
-	}
 
 	@Test
 	public void createNullArgumentNameFacility() throws Exception {
