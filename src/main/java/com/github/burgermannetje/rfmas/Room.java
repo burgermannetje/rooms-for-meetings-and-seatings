@@ -7,10 +7,20 @@ public class Room {
 	private Facility facility;
 	private int availableSeats;
 
+	public Room(Location location, int availableSeats) 
+	{
+		new Room(location, null, availableSeats, null);
+	}
+
+	public Room(Location location, final String roomName, int availableSeats) 
+	{
+		new Room(location, roomName, availableSeats, null);
+	}
+		
 	public Room(Location location, final String roomName, int availableSeats, Facility facility) {
-		if (facility == null) {
-			throw new IllegalArgumentException("Room: argument 'facility' cannot be empty");
-		}
+//		if (facility == null) {
+//			throw new IllegalArgumentException("Room: argument 'facility' cannot be empty");
+//		}
 		if (location == null) {
 			throw new IllegalArgumentException("Room: argument 'location' cannot be empty");
 		}
