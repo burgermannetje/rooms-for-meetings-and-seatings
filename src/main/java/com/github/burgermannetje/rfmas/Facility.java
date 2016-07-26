@@ -1,5 +1,7 @@
 package com.github.burgermannetje.rfmas;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class Facility implements Comparable<Facility>{
 
 	private String name;
@@ -9,7 +11,7 @@ public class Facility implements Comparable<Facility>{
 			throw new IllegalArgumentException("Facility: 'name' should not be null");
 		}
 		
-		String nameCln = facilityName.trim();
+		String nameCln = StringUtils.trim(facilityName);
 		if ("".equals(nameCln)) {
 			throw new IllegalArgumentException("Facility: 'name' contains non-empty blanks");
 		}
