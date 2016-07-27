@@ -1,3 +1,5 @@
+package com.github.burgermanntje.rfmas.it;
+
 import org.junit.runner.RunWith;
 
 import cucumber.api.CucumberOptions;
