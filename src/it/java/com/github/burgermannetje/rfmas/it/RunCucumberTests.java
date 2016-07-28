@@ -1,4 +1,4 @@
-package com.github.burgermanntje.rfmas.it;
+package com.github.burgermannetje.rfmas.it;
 
 import org.junit.runner.RunWith;
 
